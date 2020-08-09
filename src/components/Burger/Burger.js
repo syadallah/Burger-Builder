@@ -14,6 +14,7 @@ const burger = (props) => {
 
          <BurgerIngredient type="cheese" />
          <BurgerIngredient type="meat" />
+         {transformedIngredients}
          <BurgerIngredient type="bread-bottom" />
 
     </div>
