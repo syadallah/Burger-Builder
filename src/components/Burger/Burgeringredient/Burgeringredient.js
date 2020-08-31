@@ -1,7 +1,5 @@
 import React, { Component} from 'react'
 import PropTypes from 'prop-types'
-import styles from './Burgeringredient.css'
-
 
 class BurgerIngredient extends Component {
   state = {
