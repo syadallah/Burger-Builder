@@ -13,6 +13,7 @@ console.log(transformedIngredients)
   return (
     <div className={styles.Burger}>
 
+         <BurgerIngredient type="bread-top" />
          <BurgerIngredient type="cheese" />
          <BurgerIngredient type="meat" />
          {transformedIngredients}
