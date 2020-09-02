@@ -3,7 +3,7 @@ import styles from './Burger.css'
 import BurgerIngredient from './Burgeringredient/Burgeringredient.js'
 
 const burger = (props) => {
-  const transformedIngredients = Object.keys(props.ingredients).map(igKey => {
+  let transformedIngredients = Object.keys(props.ingredients).map(igKey => {
         return [...Array(props.ingredients[igKey])].map((_,i) => {
           return <BurgerIngredient key= {igKey + i} type={igKey} />
       })
@@ -12,7 +12,8 @@ const burger = (props) => {
   return arr.concat(el)
 }, [])
 if (transformedIngredients.length === 0) {
-  
+  transformedIngredients = <p> Please start adding ingredients</p>
+
 }
 console.log(transformedIngredients)
   return (
