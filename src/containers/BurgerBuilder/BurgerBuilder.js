@@ -2,6 +2,13 @@ import React, { Component } from 'react'
 import BuildControls from '../../components/Burger/BuildControls/BuildControls'
 import Burger from '../../components/Burger/Burger'
 
+//Global
+const INGREDIENT_PRICES = {
+  salad: 0.5,
+  cheese: 0.6,
+  bacon: 0.75,
+  meat:1.25
+}
 class BurgerBuilder extends Component {
   state = {
     ingredients: {
