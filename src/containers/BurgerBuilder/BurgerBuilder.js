@@ -53,12 +53,20 @@ class BurgerBuilder extends Component {
 
   }
   render () {
+    //doesnot update the state, but make a copy
+    const disabledInfo = {
+      ...this.state.ingredients
+    }
+    for (let key in disabledInfo) {
+      disabledInfo[key] =disabledInfo <=0
+    }
     return (
       <React.Fragment>
          <Burger ingredients= {this.state.ingredients}/>
          <BuildControls
          ingredientAdded={this.addIngredientHandler}
          ingredientRemoved={this.removeIngredientHandler}
+         disabled ={disabledInfo}
 
 
          />
