@@ -11,6 +11,9 @@ const burger = (props) => {
 .reduce((arr, el) => {
   return arr.concat(el)
 }, [])
+if (transformedIngredients.length === 0) {
+  
+}
 console.log(transformedIngredients)
   return (
     <div className={styles.Burger}>
