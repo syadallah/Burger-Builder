@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+import styles from './buildControls.css'
 const controls = [
   {label: 'Salad', type: 'salad'},
   {label: 'Bacon', type: 'bacon'},
@@ -8,7 +8,7 @@ const controls = [
   {label: 'Meat', type: 'meat'}
 ]
 const buildControls = (props) => (
-  <div>
+  <div className={styles.buildControls}>
 
 
   </div>
