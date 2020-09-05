@@ -20,7 +20,8 @@ class BurgerBuilder extends Component {
       meat: 0
     },
     totalPrice: 4,
-    purchasable: false
+    purchasable: false,
+    purchasing: false
   }
 
   updatePurchaseState () {
@@ -37,6 +38,8 @@ class BurgerBuilder extends Component {
     this.setState({purchasable: sum > 0})
   }
 
+
+// This method used arrow function to contain the state
   addIngredientHandler = (type) => {
     const oldCount = this.state.ingredients[type]
     const updatedCount = oldCount + 1
@@ -68,9 +71,10 @@ class BurgerBuilder extends Component {
     const newPrice = oldPrice - priceDeduction
     this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
     this.updatePurchaseState()
-
-
-  }
+    }
+    purchaseHandler = () => {
+      this.setState({purchasing: true})
+    }
   render () {
     //doesnot update the state, but make a copy
     const disabledInfo = {
@@ -81,9 +85,8 @@ class BurgerBuilder extends Component {
     }
     return (
       <React.Fragment>
-        <Modal>
+        <Modal show={this.purchasing}>
         <OrderSummary ingredients ={this.state.ingredients}/>
-
         </Modal>
          <Burger ingredients= {this.state.ingredients}/>
          <BuildControls
@@ -92,6 +95,7 @@ class BurgerBuilder extends Component {
          disabled ={disabledInfo}
          price={this.state.totalPrice}
          purchasable ={this.state.purchasable}
+         orderd={this.purchaseHandler}
          />
       </React.Fragment>
     )
