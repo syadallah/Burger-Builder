@@ -75,6 +75,9 @@ class BurgerBuilder extends Component {
     purchaseHandler = () => {
       this.setState({purchasing: true})
     }
+    purchaseCancelHandler =() => {
+      this.setState({purchasing: false})
+    }
   render () {
     //doesnot update the state, but make a copy
     const disabledInfo = {
@@ -85,7 +88,7 @@ class BurgerBuilder extends Component {
     }
     return (
       <React.Fragment>
-        <Modal show={this.purchasing}>
+        <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
         <OrderSummary ingredients ={this.state.ingredients}/>
         </Modal>
          <Burger ingredients= {this.state.ingredients}/>
