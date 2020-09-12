@@ -17,8 +17,8 @@ const orderSummary = (props) => {
      <ul>
        {ingredientSummary}
      </ul>
-     <Button clicked={props.purchaseContinuedHandler}> Continue</Button>
-     <Button clicked={props.purchaseCanceledHandler}>CANCEL</Button>
+     <Button btnType={'Seccuss'} clicked={props.purchaseContinuedHandler}> Continue</Button>
+     <Button btnType={'Danger'}  clicked={props.purchaseCanceledHandler}>CANCEL</Button>
   </React.Fragment>
  )
 }
