@@ -78,6 +78,9 @@ class BurgerBuilder extends Component {
     purchaseCancelHandler =() => {
       this.setState({purchasing: false})
     }
+    purchaseContinueHandler = () => {
+      alert('You Continue')
+    }
   render () {
     //doesnot update the state, but make a copy
     const disabledInfo = {
@@ -89,7 +92,12 @@ class BurgerBuilder extends Component {
     return (
       <React.Fragment>
         <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
-        <OrderSummary ingredients ={this.state.ingredients}/>
+        <OrderSummary
+
+
+        ingredients ={this.state.ingredients}
+        purchaseCanceledHandler={this.purchaseCancelHandler}
+        purchaseContinuedHandler={this.purchaseContinueHandler}/>
         </Modal>
          <Burger ingredients= {this.state.ingredients}/>
          <BuildControls
