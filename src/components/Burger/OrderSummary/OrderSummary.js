@@ -17,7 +17,7 @@ const orderSummary = (props) => {
      <ul>
        {ingredientSummary}
      </ul>
-     <p><strong>Total Price: {props.price}</strong></p>
+     <p><strong>Total Price: {props.price.toFixed(2)}</strong></p>
      <Button btnType={'Success'} clicked={props.purchaseContinuedHandler}> Continue</Button>
      <Button btnType={'Danger'}  clicked={props.purchaseCanceledHandler}>CANCEL</Button>
   </React.Fragment>
