@@ -1,8 +1,8 @@
 import React from 'react'
-
+import style from './NavigationItems.css'
 const navigationItems = () => (
-  <ul>
-  <li><a href="/">A LNIK</a></li>
+  <ul className={style.NavigationItems}>
+
   </ul>
 
 )
