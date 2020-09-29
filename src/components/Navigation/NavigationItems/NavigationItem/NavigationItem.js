@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './NavigationItems.css'
+import style from './NavigationItem.css'
 
 const navigationItem = (props) => (
 
