@@ -8,7 +8,7 @@ const sideDrawer = (props) => {
 
   return (
     <div>
-    <Backdrop />
+    <Backdrop show/>
 
     <div className={style.SideDrawer}>
     <Logo height='10%' margin-bottom="30px"/>
