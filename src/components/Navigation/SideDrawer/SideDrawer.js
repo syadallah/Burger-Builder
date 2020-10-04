@@ -11,7 +11,7 @@ const sideDrawer = (props) => {
     <Backdrop />
 
     <div className={style.SideDrawer}>
-    <Logo height='10%'/>
+    <Logo height='10%' margin-bottom="30px"/>
     <nav>
     <NavigationItems />
     </nav>
