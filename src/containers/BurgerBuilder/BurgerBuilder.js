@@ -3,6 +3,7 @@ import BuildControls from '../../components/Burger/BuildControls/BuildControls'
 import Burger from '../../components/Burger/Burger'
 import Modal from '../../components/UI/Modal/Modal'
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary'
+import axios from '../../axios-orders'
 
 //Global
 const INGREDIENT_PRICES = {
@@ -79,7 +80,9 @@ class BurgerBuilder extends Component {
       this.setState({purchasing: false})
     }
     purchaseContinueHandler = () => {
-      alert('You Continue')
+      //alert('You Continue')
+      axios.post('/orders.json')
+
     }
   render () {
     //doesnot update the state, but make a copy
