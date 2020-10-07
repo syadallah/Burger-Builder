@@ -1,21 +1,38 @@
 .Button {
-	border-radius:6px;
+	margin-right: 12px;
+
+	border-radius:4px;
 	display:inline-block;
 	cursor:pointer;
+	color:#ffffff;
 	font-family:Arial;
-	font-size:15px;
+	font-size:13px;
 	font-weight:bold;
-	padding:24px 30px;
-  text-align: center;
-  margin-left: 12px;
+	padding:6px 12px;
+	text-decoration:none;
 
 }
-
+.Button:hover {
+	background:linear-gradient(to bottom, #7F7F7F 5%, #7F7F7F 100%);
+	background-color:#7F7F7F;
+}
+.Button:active {
+	position:relative;
+	top:1px;
+}
 
 .Success {
-  background-color: : #5C9210;
+  background-color:#77b55a;
+	text-shadow:0px 1px 0px #5b8a3c;
+	border:1px solid #4b8f29;
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
 }
 
 .Danger {
   background-color: #944317;
+	text-shadow:0px 1px 0px #944317;
+	border:1px solid #944400;
+	box-shadow: 0px 10px 14px -7px #944400;
+	background:linear-gradient(to bottom, #944400 5%, #944400 100%);
 }
