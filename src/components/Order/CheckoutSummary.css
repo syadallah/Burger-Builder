@@ -5,4 +5,10 @@
 }
 h1 {
   text-align: center;
+  font-size: 1.5rem;
+}
+@media (min-width: 600px) {
+  .CheckoutSummary {
+    width: 350px;
+  }
 }
