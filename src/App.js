@@ -9,8 +9,8 @@ function App() {
     <div>
     <Layout />
     <Route path="/" component={BurgerBuilder}/>
-    <BurgerBuilder />
-    <Checkout />
+    <Route path="/Checkout" component={Checkout}/>
+
     </div>
   );
 }
