@@ -83,30 +83,31 @@ class BurgerBuilder extends Component {
     }
     purchaseContinueHandler = () => {
       //alert('You Continue')
-      this.setState({ loading: true})
-      const order ={
-      ingredients: this.state.ingredients,
-      price: this.state.totalPrice,
-      customer: {
-        name: 'Salim',
-        address: {
-          street: 'Leavitt',
-          zipCode: '01972',
-          country: 'USA'
+    //  this.setState({ loading: true})
+    //  const order ={
+    //  ingredients: this.state.ingredients,
+    //  price: this.state.totalPrice,
+    //  customer: {
+    //    name: 'Salim',
+    //    address: {
+    //      street: 'Leavitt',
+    //      zipCode: '01972',
+    //      country: 'USA'
 
-        },
-        email: 'Salim@salim.com'
-      },
-      deliveryMethod: 'Fast'
-    }
-      axios.post('/orders.json', order)
-      .then(response => {
-        this.setState({ loading: false, purchasing: false})
-      })
-      .catch(error => {
-        this.setState({ loading: false, purchasing: false})
-      })
-
+    //    },
+    //    email: 'Salim@salim.com'
+    //  },
+    //  deliveryMethod: 'Fast'
+  //  }
+  //    axios.post('/orders.json', order)
+  //    .then(response => {
+  //      this.setState({ loading: false, purchasing: false})
+//      })
+  //    .catch(error => {
+  //      this.setState({ loading: false, purchasing: false})
+  //    })
+// BurgerBuldier is loaded through route object, thus we will have access t, match, and locationo history
+this.props.history.push('/checkout')
     }
   render () {
     //doesnot update the state, but make a copy
