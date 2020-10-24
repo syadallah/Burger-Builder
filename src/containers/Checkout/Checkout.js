@@ -15,6 +15,7 @@ class Checkout extends Component {
 
   }
   checkoutContinuedHandler = () => {
+    this.props.history.replace()
 
   }
 render () {
