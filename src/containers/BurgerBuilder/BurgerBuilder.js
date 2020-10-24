@@ -107,9 +107,15 @@ class BurgerBuilder extends Component {
   //      this.setState({ loading: false, purchasing: false})
   //    })
 // BurgerBuldier is loaded through route object, thus we will have access t, match, and locationo history
+const queryParams =[]
+for (let i in this.state.ingredients) {
+  queryParams.push(encodeURIComponent(i) + "="+ encodeURIComponent(this.state.ingredients[i]))
+
+}
+const queryString = queryParams.join('&')
 this.props.history.push({
   pathname: '/checkout',
-  search: '' 
+  search: '?' + queryString
 })
     }
   render () {
