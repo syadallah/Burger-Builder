@@ -83,7 +83,7 @@ class BurgerBuilder extends Component {
     }
     purchaseContinueHandler = () => {
       //alert('You Continue')
-    //  this.setState({ loading: true})
+     //this.setState({ loading: true})
     //  const order ={
     //  ingredients: this.state.ingredients,
     //  price: this.state.totalPrice,
@@ -107,7 +107,10 @@ class BurgerBuilder extends Component {
   //      this.setState({ loading: false, purchasing: false})
   //    })
 // BurgerBuldier is loaded through route object, thus we will have access t, match, and locationo history
-this.props.history.push('/checkout')
+this.props.history.push({
+  pathname: '/checkout',
+  search: '' 
+})
     }
   render () {
     //doesnot update the state, but make a copy
