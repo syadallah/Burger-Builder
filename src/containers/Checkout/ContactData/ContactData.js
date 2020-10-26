@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import Button from '../../../UI/Button/Button'
-import style from './ContactData/ContactData.css'
+import Button from '../../../components/UI/Button/Button'
+import style from './ContactData.css'
 
 class ContactData extends Component {
   state ={
