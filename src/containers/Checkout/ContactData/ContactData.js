@@ -25,3 +25,4 @@ class ContactData extends Component {
     )
   }
 }
+export default ContactData
