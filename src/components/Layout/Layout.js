@@ -19,6 +19,7 @@ class Layout extends Component {
   render () {
     return (
       <React.Fragment>
+
       <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler}/>
       <SideDrawer
 
@@ -27,6 +28,7 @@ class Layout extends Component {
       <main className={styles.Content}>
       {this.props.children}
       </main>
+
       </React.Fragment>
 
     )
