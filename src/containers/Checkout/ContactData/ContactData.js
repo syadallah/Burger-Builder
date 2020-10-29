@@ -17,7 +17,7 @@ class ContactData extends Component {
       <h4> Enter your contact data</h4>
       <form>
       <input type='text' name='name' placeholder='Your Name' />
-      <input type='text' name='email' placeholder='Your Mail' />
+      <input type='email' name='email' placeholder='Your Mail' />
       <input type='text' name='street' placeholder='Street' />
       <input type='text' name='name' placeholder='Postal Code' />
       <Button btnType='Success'>ORDER</Button>
