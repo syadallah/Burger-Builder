@@ -30,10 +30,11 @@ class Checkout extends Component {
 render () {
   return (
     <div>
-    <CheckoutSummary ingredients={this.state.ingredients}
+    <CheckoutSummary
+    ingredients={this.state.ingredients}
     checkoutCancelled={this.checkoutCancelledHandler}
     checkoutContinued={this.checkoutContinuedHandler}/>
-    < Route path={this.props.path + '/contact-data'}
+    <Route path={this.props.match.path + '/contact-data'}
     component={ContactData}/>
     </div>
   )
