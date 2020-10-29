@@ -20,8 +20,9 @@ class ContactData extends Component {
       <input type='email' name='email' placeholder='Your Mail' />
       <input type='text' name='street' placeholder='Street' />
       <input type='text' name='name' placeholder='Postal Code' />
-      <Button btnType='Success' text="ORDER"></Button>
       </form>
+      <Button btnType='Success' text="ORDER"></Button>
+
       </div>
     )
   }
