@@ -9,11 +9,34 @@ class ContactData extends Component {
     address: {
       street: '',
       postalCode:''
-    }
+    },
+    loading: false
   }
   orderHandler = (event) => {
     event.preventDefault()
-    console.log(this.props.ingredients)
+   this.setstate({ loading: true})
+   const order ={
+   ingredients: this.props.ingredients,
+   price: this.state.totalprice,
+   customer: {
+     name: 'Salim',
+     address: {
+       street: 'leavitt',
+       zipcode: '01972',
+       country: 'usa'
+
+     },
+     email: 'salim@salim.com'
+   },
+   deliverymethod: 'fast'
+ }
+   axios.post('/orders.json', order)
+   .then(response => {
+     this.setstate({ loading: false, purchasing: false})
+     })
+   .catch(error => {
+     this.setstate({ loading: false, purchasing: false})
+   })
 
   }
   render () {
