@@ -11,8 +11,10 @@ class ContactData extends Component {
       postalCode:''
     }
   }
-  orderHandler = () => {
-    
+  orderHandler = (event) => {
+    event.preventDefault()
+    console.log(this.props.ingredients)
+
   }
   render () {
     return (
