@@ -15,7 +15,9 @@ class ContactData extends Component {
   }
   orderHandler = (event) => {
     event.preventDefault()
+
    this.setstate({ loading: true})
+
    const order ={
    ingredients: this.props.ingredients,
    price: this.props.price,
@@ -33,10 +35,10 @@ class ContactData extends Component {
  }
    axios.post('/orders.json', order)
    .then(response => {
-     this.setstate({ loading: false, purchasing: false})
+     this.setstate({ loading: false})
      })
    .catch(error => {
-     this.setstate({ loading: false, purchasing: false})
+     this.setstate({ loading: false})
    })
 
   }

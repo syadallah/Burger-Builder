@@ -7,7 +7,7 @@ class Checkout extends Component {
     ingredients: null,
     price:0
   }
-  componentDidMount() {
+  componentWillMount() {
     const query = new URLSearchParams(this.props.location.search)
     const ingredients = {}
     let price = 0
