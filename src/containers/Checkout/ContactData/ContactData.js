@@ -11,6 +11,9 @@ class ContactData extends Component {
       postalCode:''
     }
   }
+  orderHandler = () => {
+    
+  }
   render () {
     return (
       <div className={style.ContactData}>
@@ -21,7 +24,7 @@ class ContactData extends Component {
       <input type='text' name='street' placeholder='Street' />
       <input type='text' name='name' placeholder='Postal Code' />
       </form>
-      <Button btnType='Success' text="ORDER"></Button>
+      <Button btnType='Success' text="ORDER" clicked={this.orderHandler}></Button>
 
       </div>
     )
