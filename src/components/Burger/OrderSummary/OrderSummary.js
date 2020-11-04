@@ -4,10 +4,10 @@ import style from './OrderSummary.css'
 
 const orderSummary = (props) => {
   const ingredientSummary = Object.keys(props.ingredients)
-  .map(igKey => {
+  .map(ingKey => {
     return (
-    <li key ={igKey}>
-    <span style ={{textTransform:'capitalize'}}> </span>{igKey}:{props.ingredients[igKey]}
+    <li key ={ingKey}>
+    <span style ={{textTransform:'capitalize'}}>{ingKey}</span>:{props.ingredients[ingKey]}
     </li>)
   } )
 
@@ -19,7 +19,7 @@ const orderSummary = (props) => {
      <ul>
        {ingredientSummary}
      </ul>
-     <p><strong>Total Price: {props.price.toFixed(2)}</strong></p>
+     <p><strong>Total Price: $ {props.price.toFixed(2)}</strong></p>
      <Button btnType={'Success'} clicked={props.purchaseContinuedHandler} text={'Continue'}></Button>
      <Button btnType={'Danger'}  clicked={props.purchaseCanceledHandler} text={'CANCEL'}></Button>
      </div>
