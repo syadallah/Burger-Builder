@@ -34,10 +34,10 @@ class ContactData extends Component {
  }
    axios.post('/orders.json', order)
    .then(response => {
-     this.setstate({ loading: false})
+     this.setState({ loading: false})
      })
    .catch(error => {
-     this.setstate({ loading: false})
+     this.setState({ loading: false})
    })
 
   }
