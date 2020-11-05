@@ -48,6 +48,7 @@ class ContactData extends Component {
       <input type='email' name='email' placeholder='Your Mail' />
       <input type='text' name='street' placeholder='Street' />
       <input type='text' name='name' placeholder='Postal Code' />
+      <Button btnType='Success' text="ORDER" clicked={this.orderHandler}></Button>
       </form>
     )
     if (this.state.loading) {
@@ -57,13 +58,7 @@ class ContactData extends Component {
     return (
       <div className={style.ContactData}>
       <h4> Enter your contact data</h4>
-      <form>
-      <input type='text' name='name' placeholder='Your Name' />
-      <input type='email' name='email' placeholder='Your Mail' />
-      <input type='text' name='street' placeholder='Street' />
-      <input type='text' name='name' placeholder='Postal Code' />
-      </form>
-      <Button btnType='Success' text="ORDER" clicked={this.orderHandler}></Button>
+       {form}
 
       </div>
     )
