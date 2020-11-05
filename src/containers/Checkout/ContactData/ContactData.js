@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Button from '../../../components/UI/Button/Button'
 import style from './ContactData.css'
 import axios from '../../../axios-orders'
-
+import Spinner from '../../components/UI/Spinner/Spinner'
 class ContactData extends Component {
   state ={
     name: '',
