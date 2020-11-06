@@ -15,8 +15,7 @@ if (transformedIngredients.length === 0) {
   transformedIngredients = <p style={{color: "Black"}}> Please start adding ingredients</p>
 
 }
-console.log(Array)
-console.log(transformedIngredients.length)
+
   return (
     <div className={styles.Burger}>
 
