@@ -9,15 +9,9 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler'
 import axios from '../../axios-orders'
 import * as actionTypes from '../../store/action'
 //Global
-const INGREDIENT_PRICES = {
-  salad: 0.5,
-  cheese: 0.6,
-  bacon: 0.75,
-  meat:1.25
-}
+
 class BurgerBuilder extends Component {
   state = {
-    totalPrice: 4,
     purchasable: false,
     purchasing: false,
     loading: false
@@ -37,40 +31,40 @@ class BurgerBuilder extends Component {
     this.setState({purchasable: sum > 0})
   }
 
-
+// This Handeled using REDUX gloable state
 // This method used arrow function to contain the state
-  addIngredientHandler = (type) => {
-    const oldCount = this.props.ings[type]
-    const updatedCount = oldCount + 1
-    const updatedIngredients = {
-      ...this.props.ings
-    }
-    updatedIngredients[type] = updatedCount
-    const priceAddition = INGREDIENT_PRICES[type]
-    const oldPrice = this.state.totalPrice
-    const newPrice = oldPrice + priceAddition
-    this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
-    this.updatePurchaseState()
-
-
-  }
-
-  removeIngredientHandler = (type) => {
-    const oldCount = this.props.ings[type]
-    if (oldCount <= 0) {
-      return
-    }
-    const updatedCount = oldCount - 1
-    const updatedIngredients = {
-      ...this.props.ings
-    }
-    updatedIngredients[type] = updatedCount
-    const priceDeduction = INGREDIENT_PRICES[type]
-    const oldPrice = this.state.totalPrice
-    const newPrice = oldPrice - priceDeduction
-    this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
-    this.updatePurchaseState()
-    }
+  // addIngredientHandler = (type) => {
+  //   const oldCount = this.props.ings[type]
+  //   const updatedCount = oldCount + 1
+  //   const updatedIngredients = {
+  //     ...this.props.ings
+  //   }
+  //   updatedIngredients[type] = updatedCount
+  //   const priceAddition = INGREDIENT_PRICES[type]
+  //   const oldPrice = this.state.totalPrice
+  //   const newPrice = oldPrice + priceAddition
+  //   this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
+  //   this.updatePurchaseState()
+  //
+  //
+  // }
+  //
+  // removeIngredientHandler = (type) => {
+  //   const oldCount = this.props.ings[type]
+  //   if (oldCount <= 0) {
+  //     return
+  //   }
+  //   const updatedCount = oldCount - 1
+  //   const updatedIngredients = {
+  //     ...this.props.ings
+  //   }
+  //   updatedIngredients[type] = updatedCount
+  //   const priceDeduction = INGREDIENT_PRICES[type]
+  //   const oldPrice = this.state.totalPrice
+  //   const newPrice = oldPrice - priceDeduction
+  //   this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
+  //   this.updatePurchaseState()
+  //   }
     purchaseHandler = () => {
       this.setState({purchasing: true})
     }
@@ -103,7 +97,7 @@ this.props.history.push({
     }
     let orderSummary = <OrderSummary
 
-    price={this.state.totalPrice}
+    price={this.props.price}
     ingredients ={this.props.ings}
     purchaseCanceledHandler={this.purchaseCancelHandler}
     purchaseContinuedHandler={this.purchaseContinueHandler} />
@@ -123,7 +117,7 @@ this.props.history.push({
          ingredientAdded={this.props.onIngredientAdded}
          ingredientRemoved={this.props.onIngredientRemoved}
          disabled ={disabledInfo}
-         price={this.state.totalPrice}
+         price={this.props.price}
          purchasable ={this.state.purchasable}
          orderd={this.purchaseHandler}
          />
@@ -133,7 +127,8 @@ this.props.history.push({
 }
 const mapStateToProps = state => {
   return {
-    ings: state.ingredients
+    ings: state.ingredients,
+    price: state.totalPrice
   }
 }
 const mapDispatchToProps = dispatch => {
