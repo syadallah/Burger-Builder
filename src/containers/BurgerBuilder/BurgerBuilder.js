@@ -28,40 +28,6 @@ class BurgerBuilder extends Component {
 return sum > 0
   }
 
-// This Handeled using REDUX gloable state
-// This method used arrow function to contain the state
-  // addIngredientHandler = (type) => {
-  //   const oldCount = this.props.ings[type]
-  //   const updatedCount = oldCount + 1
-  //   const updatedIngredients = {
-  //     ...this.props.ings
-  //   }
-  //   updatedIngredients[type] = updatedCount
-  //   const priceAddition = INGREDIENT_PRICES[type]
-  //   const oldPrice = this.state.totalPrice
-  //   const newPrice = oldPrice + priceAddition
-  //   this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
-  //   this.updatePurchaseState()
-  //
-  //
-  // }
-  //
-  // removeIngredientHandler = (type) => {
-  //   const oldCount = this.props.ings[type]
-  //   if (oldCount <= 0) {
-  //     return
-  //   }
-  //   const updatedCount = oldCount - 1
-  //   const updatedIngredients = {
-  //     ...this.props.ings
-  //   }
-  //   updatedIngredients[type] = updatedCount
-  //   const priceDeduction = INGREDIENT_PRICES[type]
-  //   const oldPrice = this.state.totalPrice
-  //   const newPrice = oldPrice - priceDeduction
-  //   this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
-  //   this.updatePurchaseState()
-  //   }
     purchaseHandler = () => {
       this.setState({purchasing: true})
     }
@@ -70,22 +36,10 @@ return sum > 0
     }
     // Instead of using queryParams to pass state now we use redux
 purchaseContinueHandler = () => {
-//
-// // BurgerBuldier is loaded through route object, thus we will have access t, match, and locationo history
-// const queryParams =[]
-//
-// for (let i in this.props.ings) {
-//   queryParams.push(encodeURIComponent(i) + "="+ encodeURIComponent(this.props.ings[i]))
-//
-// }
-// queryParams.push('price=' + this.state.totalPrice.toFixed(2))
-// const queryString = queryParams.join('&')
+
 this.props.history.push('/checkout')
 }
-//   pathname: '/checkout',
-//   search: '?' + queryString
-// })
-//     }
+
   render () {
     //doesnot update the state, but make a copy
     const disabledInfo = {
