@@ -27,7 +27,6 @@ const order = (props) => {
     <p>Price: <strong>USD {props.price}</strong></p>
     </div>
   )
-
 }
 
   export default order
