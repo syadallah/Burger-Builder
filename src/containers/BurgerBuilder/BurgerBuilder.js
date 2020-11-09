@@ -68,22 +68,24 @@ return sum > 0
     purchaseCancelHandler =() => {
       this.setState({purchasing: false})
     }
-    purchaseContinueHandler = () => {
-
-// BurgerBuldier is loaded through route object, thus we will have access t, match, and locationo history
-const queryParams =[]
-
-for (let i in this.props.ings) {
-  queryParams.push(encodeURIComponent(i) + "="+ encodeURIComponent(this.props.ings[i]))
-
+    // Instead of using queryParams to pass state now we use redux
+purchaseContinueHandler = () => {
+//
+// // BurgerBuldier is loaded through route object, thus we will have access t, match, and locationo history
+// const queryParams =[]
+//
+// for (let i in this.props.ings) {
+//   queryParams.push(encodeURIComponent(i) + "="+ encodeURIComponent(this.props.ings[i]))
+//
+// }
+// queryParams.push('price=' + this.state.totalPrice.toFixed(2))
+// const queryString = queryParams.join('&')
+this.props.history.push('/checkout')
 }
-queryParams.push('price=' + this.state.totalPrice.toFixed(2))
-const queryString = queryParams.join('&')
-this.props.history.push({
-  pathname: '/checkout',
-  search: '?' + queryString
-})
-    }
+//   pathname: '/checkout',
+//   search: '?' + queryString
+// })
+//     }
   render () {
     //doesnot update the state, but make a copy
     const disabledInfo = {
