@@ -42,12 +42,10 @@ this.props.history.push('/checkout')
 
   render () {
     //doesnot update the state, but make a copy
-    const disabledInfo = {
-      ...this.props.ings
-    }
-    for (let key in disabledInfo) {
-      disabledInfo[key] =disabledInfo <=0
-    }
+    const disabledInfo = { ...this.props.ings }
+      for (let key in disabledInfo) {
+        disabledInfo[key] = disabledInfo[key] <= 0
+      }
     let orderSummary = <OrderSummary
 
     price={this.props.price}
@@ -69,7 +67,7 @@ this.props.history.push('/checkout')
          <BuildControls
          ingredientAdded={this.props.onIngredientAdded}
          ingredientRemoved={this.props.onIngredientRemoved}
-         disabled ={disabledInfo}
+         disabledInfo={disabledInfo}
          price={this.props.price}
          purchasable ={this.updatePurchaseState(this.props.ings)}
          orderd={this.purchaseHandler}
