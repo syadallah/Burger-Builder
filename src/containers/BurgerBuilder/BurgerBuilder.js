@@ -12,15 +12,12 @@ import * as actionTypes from '../../store/action'
 
 class BurgerBuilder extends Component {
   state = {
-    purchasable: false,
     purchasing: false,
     loading: false
   }
 
-  updatePurchaseState () {
-    const ingredients = {
-      ...this.props.ings
-    }
+  updatePurchaseState (ingredients) {
+
     const sum = Object.keys(ingredients)
     .map(igkey => {
       return ingredients[igkey]
@@ -28,7 +25,7 @@ class BurgerBuilder extends Component {
     .reduce((sum, el) => {
       return sum+ el
     },0)
-    this.setState({purchasable: sum > 0})
+return sum > 0
   }
 
 // This Handeled using REDUX gloable state
@@ -118,7 +115,7 @@ this.props.history.push({
          ingredientRemoved={this.props.onIngredientRemoved}
          disabled ={disabledInfo}
          price={this.props.price}
-         purchasable ={this.state.purchasable}
+         purchasable ={this.updatePurchaseState(this.props.ings)}
          orderd={this.purchaseHandler}
          />
       </React.Fragment>
